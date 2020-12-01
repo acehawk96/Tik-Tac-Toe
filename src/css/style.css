@@ -1,0 +1,32 @@
+/*
+
+*/
+
+.root
+{
+    -fx-background-color: #8fbc8f;
+    -fx-font: Arial;
+    -fx-font-size: 30px;
+}
+
+.pane
+{
+    -fx-background-color: #8fbc8f;
+    -fx-border-color: #2e8b57;
+    -fx-border-width: 20px;
+}
+
+.gameButton
+{
+    -fx-pref-width: 200px;
+    -fx-pref-height: 200px;
+    -fx-background-radius: 10px;
+    -fx-font-size: 60px;
+}
+
+.centerGrid 
+{
+    -fx-background-color: lightblue;
+    -fx-background-insets: 1, 1, 1, 1, 1 ;
+    -fx-padding: 10px;
+}
