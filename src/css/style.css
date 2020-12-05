@@ -30,3 +30,14 @@
     -fx-background-insets: 1, 1, 1, 1, 1 ;
     -fx-padding: 10px;
 }
+
+
+      centerGrid.add(tiles[0][0], 0, 0);
+      centerGrid.add(tiles[1][0], 1, 0);
+      centerGrid.add(tiles[2][0], 2, 0);
+      centerGrid.add(tiles[0][1], 0, 1);
+      centerGrid.add(tiles[1][1], 1, 1);
+      centerGrid.add(tiles[2][1], 2, 1);
+      centerGrid.add(tiles[0][2], 0, 2);
+      centerGrid.add(tiles[1][2], 1, 2);
+      centerGrid.add(tiles[2][2], 2, 2);
