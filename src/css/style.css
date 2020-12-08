@@ -4,40 +4,58 @@
 
 .root
 {
-    -fx-background-color: #8fbc8f;
-    -fx-font: Arial;
+    -fx-background-color: #9d8189;
     -fx-font-size: 30px;
+    -fx-font-family: "Arial";
 }
 
 .pane
 {
-    -fx-background-color: #8fbc8f;
-    -fx-border-color: #2e8b57;
+    -fx-background-color: #f4acb7;
+    -fx-border-color: #ffe5d9;
     -fx-border-width: 20px;
 }
 
 .gameButton
 {
+    -fx-text-fill: #9d8189;
     -fx-pref-width: 200px;
     -fx-pref-height: 200px;
+    -fx-border-color: #d8e2dc;
     -fx-background-radius: 10px;
+    -fx-border-radius: 10;
     -fx-font-size: 60px;
+    -fx-padding: 6;
+}
+
 }
 
 .centerGrid 
 {
-    -fx-background-color: lightblue;
+    -fx-background-color: #9d8189;
     -fx-background-insets: 1, 1, 1, 1, 1 ;
     -fx-padding: 10px;
 }
 
+Button
+{
+    -fx-padding: 10;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 100px;
+    -fx-text-fill: #9d8189;
+    -fx-border-color: #d8e2dc;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10;
+}
 
-      centerGrid.add(tiles[0][0], 0, 0);
-      centerGrid.add(tiles[1][0], 1, 0);
-      centerGrid.add(tiles[2][0], 2, 0);
-      centerGrid.add(tiles[0][1], 0, 1);
-      centerGrid.add(tiles[1][1], 1, 1);
-      centerGrid.add(tiles[2][1], 2, 1);
-      centerGrid.add(tiles[0][2], 0, 2);
-      centerGrid.add(tiles[1][2], 1, 2);
-      centerGrid.add(tiles[2][2], 2, 2);
+Text
+{
+    -fx-text-alignment: center;
+    -fx-padding: 10;
+}
+
+.centerAlign 
+{
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}

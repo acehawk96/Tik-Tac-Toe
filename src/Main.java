@@ -9,7 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.event.EventHandler;
-import javafx.event.ActionEvent; 
+import javafx.event.ActionEvent;
+import javax.swing.JOptionPane; 
 /*
 */
 public class Main extends Application
@@ -17,7 +18,7 @@ public class Main extends Application
    //Fields.
    private TextField playerOneField;
    private TextField playerTwoField;
-   
+      
    public static void main(String[] args)
    {  
       // Launch the application.
@@ -33,11 +34,12 @@ public class Main extends Application
       BorderPane welcomeBorder = new BorderPane();
       GridPane playerGrid = new GridPane();
       Button startButton = new Button("Start");
+      Button enterButton = new Button("Enter");
       Label playerOne = new Label("Player One name: ");
       Label playerTwo = new Label("Player Two name: ");
       Label welcomeLabel = new Label("Welcome to Tic Tac Toe!");
-      TextField playerOneField = new TextField();
-      TextField playerTwoField = new TextField();
+      TextField playerOneField = new TextField("player 1");
+      TextField playerTwoField = new TextField("player 2");
       VBox bottomVbox = new VBox(startButton);
       
       //Build Grid.
@@ -45,6 +47,7 @@ public class Main extends Application
       playerGrid.add(playerTwo, 0, 1);
       playerGrid.add(playerOneField, 1, 0);
       playerGrid.add(playerTwoField, 1, 1);
+      playerGrid.add(enterButton, 1, 3);
       
       //Build Board.
       welcomeBorder.setTop(welcomeLabel);
@@ -59,6 +62,10 @@ public class Main extends Application
       
       //Add CSS.
       scene1.getStylesheets().add("css/style.css");
+      playerGrid.getStyleClass().addAll("centerAlign");
+      welcomeBorder.getStyleClass().addAll("centerAlign");
+      bottomVbox.getStyleClass().addAll("centerAlign");
+      enterButton.getStyleClass().addAll("centerAlign");
       
       // Add the scene1 to the primaryStage.
       primaryStage.setScene(scene1);
@@ -69,6 +76,13 @@ public class Main extends Application
       // Show the window.
       primaryStage.show();
       
+      //Event Listener for enterButton.
+      enterButton.setOnAction(event ->
+      {
+         //Display names. 
+         JOptionPane.showMessageDialog(null, "Welcome "+ playerOneField.getText() +" & " + playerTwoField.getText() + "!");
+      });
+
       //Event Listener for startButton.
       startButton.setOnAction(event ->
       {
