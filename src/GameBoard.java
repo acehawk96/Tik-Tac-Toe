@@ -102,6 +102,7 @@ public class GameBoard
       
       //Set Alignment.
       centerGrid.setAlignment(Pos.CENTER);
+      gameBorder.setAlignment(alert, Pos.CENTER);
       
       //Add CSS.
       bottomGrid.getStyleClass().addAll("pane");
