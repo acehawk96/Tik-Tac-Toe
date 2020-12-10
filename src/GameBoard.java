@@ -11,26 +11,33 @@ import javafx.scene.Group;
 import javafx.scene.text.*;
 import java.io.*; 
 import java.util.*; 
-/*
-   
+/**
+   This program is a Tick Tac Toe Game created for
+   Computer Science 2 class Final Project at CCM.
+   ---
+   Final Project.
+   ---
+   10 Dec 2020  
 */
 public class GameBoard
 {     
-   //Varible and fields.
-   protected int tileNum = 0;
-   protected String symbol;
+   //Fields.
+   protected int tileNum = 0; //numbers the tiles text.
+   protected String symbol; //Holds symbol's X or O at a given time.
    protected boolean winner = false;
    protected boolean playerOne = false;
    protected boolean playerTwo = false; 
-   protected int count = 0;
-   protected int counter = 0;
-   protected int row = 0;
-   protected int col = 0;
-   protected Button[][] tiles = new Button[3][3];
-   Text alert = new Text("");
+   protected int count = 0; //tracks number of moves(possibly corruption from passing). 
+   protected int counter = 0; //tracks number of moves. no corruption.
+   protected int row = 0; //row count in for loop.
+   protected int col = 0; //column count in for loop.
+   //Objects.
+   protected Button[][] tiles = new Button[3][3]; //3 * 3 two sided array(Game's board tiles). 
+   Text alert = new Text(""); //Text for game notification.
 
-   /*
-      Build Stage.
+   /**
+      playStage method creates secondary stage 
+      (the game's board).
    */
    protected void playStage()
    {  
@@ -68,7 +75,7 @@ public class GameBoard
       }
       System.out.println("---------- Completed creating 9 Buttons with for loop! ----- ");
       
-      //more testing.
+      //console test for checking winner variable.
       System.out.println("Is there a winner? "+ winner);
       
       //Build Board.
@@ -110,16 +117,16 @@ public class GameBoard
       gameBorder.getStyleClass().addAll("centerAlign");
       alert.getStyleClass().addAll("centerAlign");
       
-      // Add the scene2 to the secondaryStage.
+      //Add the scene2 to the secondaryStage.
       secondaryStage.setScene(scene2);
       
-      // Set secondaryStage title.
+      //Set secondaryStage title.
       secondaryStage.setTitle("Tic Tac Toe");
       
       //Debugging
       bottomGrid.setGridLinesVisible(true);
       
-      // Show the window.
+      //Show the window.
       secondaryStage.show();
       
       //endButton Actions.
@@ -127,15 +134,18 @@ public class GameBoard
       
       //resetButton Actions.
       restartButton.setOnAction(event -> 
-      {
+      {  
+         //Open and close secondaryStage(Reset).
          playStage();
          secondaryStage.close();
       });
 
       
-      /*button#'s actions to change from X to O.
-      (Some how this defies the law of physics with passing an int and recieving a string "x" or "o").*/
-      //button1
+      /*  
+         button#'s actions to change from X to O.  
+      */
+      
+      //button1.
       tiles[0][0].setOnAction(event ->                                      
       {  
          count++;
@@ -146,7 +156,7 @@ public class GameBoard
          //Check for win in matching rows or colunms.
          checkWin();   
       });
-      //button2
+      //button2.
       tiles[1][0].setOnAction(event -> 
       {                                                                       
          count++;
@@ -157,7 +167,7 @@ public class GameBoard
          //Check for win in matching rows or colunms.
          checkWin();
       });
-      //button3
+      //button3.
       tiles[2][0].setOnAction(event -> 
       {  
          count++;
@@ -168,7 +178,7 @@ public class GameBoard
          //Check for win in matching rows or colunms.
          checkWin();
       });
-      //button4
+      //button4.
       tiles[0][1].setOnAction(event -> 
       {                                                                                 
          count++;
@@ -179,7 +189,7 @@ public class GameBoard
          //Check for win in matching rows or colunms.
          checkWin();
       });
-      //button5
+      //button5.
       tiles[1][1].setOnAction(event -> 
       {  
          count++;
@@ -190,7 +200,7 @@ public class GameBoard
          //Check for win in matching rows or colunms.
          checkWin();         
       });
-      //button6
+      //button6.
       tiles[2][1].setOnAction(event -> 
       {  
          count++;
@@ -201,7 +211,7 @@ public class GameBoard
          //Check for win in matching rows or colunms.
          checkWin();
       });
-      //button7
+      //button7.
       tiles[0][2].setOnAction(event -> 
       {  
          count++;
@@ -212,7 +222,7 @@ public class GameBoard
          //Check for win in matching rows or colunms.
          checkWin();
       });
-      //button8
+      //button8.
       tiles[1][2].setOnAction(event -> 
       {  
          count++;
@@ -223,7 +233,7 @@ public class GameBoard
          //Check for win in matching rows or colunms.
          checkWin();
       });
-      //button9
+      //button9.
       tiles[2][2].setOnAction(event -> 
       {  
          count++;
@@ -236,51 +246,54 @@ public class GameBoard
       });                                                                        
    }//End of playStage method.
      
-   /*
-   
+   /**
+      checkWin method iterates tiles arrays rows/columns/diagonals
+      for a match in either X's or O's to determine win condition.
    */
    public void checkWin()
    {  
-      //Check rows for win.
+      //Check rows for matching win.
       for(this.row = 0; this.row < 3; this.row++)
       {
          if(this.tiles[this.row][0].getText() == this.tiles[this.row][1].getText() && this.tiles[this.row][0].getText() == this.tiles[row][2].getText())
          {
-            System.out.println("Winner Found (rows)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("--- Winner Found (rows)! ---");
             winner = true;
          }
       }
-      //Check columns for win.
+      //Check columns for matching win.
       for(this.col = 0; this.col < 3; this.col++)
       {
          if(this.tiles[0][this.col].getText() == this.tiles[1][this.col].getText() && this.tiles[0][this.col].getText() == this.tiles[2][this.col].getText())
          {
-            System.out.println("Winner Found (columns)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("--- Winner Found(columns)! ---");
             winner = true;
          }
       }
       //Check for win in matching Diagonally.
       if(this.tiles[1][1].getText() == this.tiles[0][0].getText() && this.tiles[1][1].getText() == this.tiles[2][2].getText())
       {
-         System.out.println("Winner Found (diagonally)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+         System.out.println("--- Winner Found(diagonally)! ---");
          winner = true;
       }
       else if(this.tiles[1][1].getText() == this.tiles[0][2].getText() && this.tiles[1][1].getText() == this.tiles[2][0].getText())
       {
-         System.out.println("Winner Found (diagonally)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+         System.out.println("--- Winner Found (diagonally)! ---");
          winner = true;
       }
-
+      //Notify user of Win.
       if(winner == true)
       {  
          //For Debugging.
-         System.out.println("We Have A winnnnnnnnnnnnnnnnnnnnnnnnnerrrrrrrrrr");
+         System.out.println("--- Winner was set to true. Now in if statement. ---");
          //Set Text alert.
          winnerAlert(alert);
       }
    }//End of checkWin method.
    
-   /*
+   /**
+      winnerAlert method sets Text alert to notify user of winner.
+      @param Text alert : Text object's Reference variable alert.
    */
    public void winnerAlert(Text alert)
    {

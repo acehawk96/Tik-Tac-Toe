@@ -11,7 +11,18 @@ import javafx.scene.layout.VBox;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 import javax.swing.JOptionPane; 
-/*
+/**
+   This program is a Tick Tac Toe Game created for
+   Computer Science 2 class Final Project at CCM.
+   ---
+   I did not include a try catch statement for getting the 
+   user's names because I used Label objects so whether they
+   type letters, numbers, or symbols, their input will always
+   be outputted. 
+   ---
+   Final Project.
+   ---
+   10 Dec 2020  
 */
 public class Main extends Application
 {
@@ -25,7 +36,9 @@ public class Main extends Application
       launch(args);
    }   
    
-   /*
+   /**
+      start method starts javaFX GUI.
+      @param Stage primaryStage : Appliction class's Stage Reference Variable. 
    */
    @Override
    public void start(Stage primaryStage)
@@ -67,20 +80,22 @@ public class Main extends Application
       bottomVbox.getStyleClass().addAll("centerAlign");
       enterButton.getStyleClass().addAll("centerAlign");
       
-      // Add the scene1 to the primaryStage.
+      //Add the scene1 to the primaryStage.
       primaryStage.setScene(scene1);
       
-      // Set primaryStage title.
+      //Set primaryStage title.
       primaryStage.setTitle("Tic Tac Toe");
       
-      // Show the window.
+      //Show the window.
       primaryStage.show();
       
       //Event Listener for enterButton.
       enterButton.setOnAction(event ->
       {
          //Display names. 
-         JOptionPane.showMessageDialog(null, "Welcome "+ playerOneField.getText() +" & " + playerTwoField.getText() + "!");
+         JOptionPane.showMessageDialog(null, "Welcome "
+                                             + playerOneField.getText() +" & "
+                                                + playerTwoField.getText() + "!");
       });
 
       //Event Listener for startButton.

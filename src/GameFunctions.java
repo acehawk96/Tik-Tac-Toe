@@ -10,15 +10,21 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.Group;
 import java.io.*; 
 import java.util.*; 
-/*
+/**
+   This program is a Tick Tac Toe Game created for
+   Computer Science 2 class Final Project at CCM.
+   ---
+   Final Project.
+   ---
+   10 Dec 2020  
 */
-
 public class GameFunctions implements BackendGameInterface
 {
    GameBoard game = new GameBoard();
      
-   /*
-   
+   /**
+      symbol method returns either X or O to Button tile array.
+      @param String c : count Integer after conversion to String.
    */
    public String symbol(String c)
    {  
@@ -38,4 +44,4 @@ public class GameFunctions implements BackendGameInterface
       }
       return sym;
    }
-}//End of class.
+}
