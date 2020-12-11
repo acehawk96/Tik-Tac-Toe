@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 import javax.swing.JOptionPane; 
+import javafx.geometry.Insets;
 /**
    This program is a Tick Tac Toe Game created for
    Computer Science 2 class Final Project at CCM.
@@ -53,7 +54,7 @@ public class Main extends Application
       Label welcomeLabel = new Label("Welcome to Tic Tac Toe!");
       TextField playerOneField = new TextField("player 1");
       TextField playerTwoField = new TextField("player 2");
-      VBox bottomVbox = new VBox(startButton);
+      VBox topVbox = new VBox(welcomeLabel);
       
       //Build Grid.
       playerGrid.add(playerOne, 0, 0);
@@ -61,23 +62,23 @@ public class Main extends Application
       playerGrid.add(playerOneField, 1, 0);
       playerGrid.add(playerTwoField, 1, 1);
       playerGrid.add(enterButton, 1, 3);
+      playerGrid.add(startButton, 1, 4);
       
       //Build Board.
-      welcomeBorder.setTop(welcomeLabel);
+      welcomeBorder.setTop(topVbox);
       welcomeBorder.setCenter(playerGrid);
-      welcomeBorder.setBottom(bottomVbox);
       
-      //Set Sizing.
-      bottomVbox.setPrefSize(0,500);
+      //Set Sizing and Postion.
+      playerGrid.setVgap(20);
+      topVbox.setAlignment(Pos.CENTER);
 
       //Create scene 1.
-      Scene scene1 = new Scene(welcomeBorder, 1000, 1000);
+      Scene scene1 = new Scene(welcomeBorder, 1000, 500);
       
       //Add CSS.
       scene1.getStylesheets().add("css/style.css");
       playerGrid.getStyleClass().addAll("centerAlign");
       welcomeBorder.getStyleClass().addAll("centerAlign");
-      bottomVbox.getStyleClass().addAll("centerAlign");
       enterButton.getStyleClass().addAll("centerAlign");
       
       //Add the scene1 to the primaryStage.
@@ -109,3 +110,13 @@ public class Main extends Application
 
    }
 }
+
+/*
+   //TESTING DATA//
+   
+   *Entering names for playerOne and playerTwo, then selecting enter button:
+      -open JoptionPane greeting.
+   
+   *Selecting start button:
+      -open secondary stage with GameBoard class.  
+*/

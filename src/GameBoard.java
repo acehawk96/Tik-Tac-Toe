@@ -11,6 +11,7 @@ import javafx.scene.Group;
 import javafx.scene.text.*;
 import java.io.*; 
 import java.util.*; 
+import javafx.geometry.Insets;
 /**
    This program is a Tick Tac Toe Game created for
    Computer Science 2 class Final Project at CCM.
@@ -51,6 +52,7 @@ public class GameBoard
       //Create Objects.
       Stage secondaryStage = new Stage();
       BorderPane gameBorder = new BorderPane();
+      GridPane topGrid = new GridPane();
       GridPane centerGrid = new GridPane();
       GridPane bottomGrid = new GridPane();
       Button restartButton = new Button("Restart");
@@ -79,7 +81,7 @@ public class GameBoard
       System.out.println("Is there a winner? "+ winner);
       
       //Build Board.
-      gameBorder.setTop(alert);
+      gameBorder.setTop(topGrid);
       gameBorder.setCenter(centerGrid);
       gameBorder.setBottom(bottomGrid);
       gameBorder.setLeft(leftHbox);
@@ -96,7 +98,8 @@ public class GameBoard
       centerGrid.add(tiles[1][2], 2, 1);
       centerGrid.add(tiles[2][2], 2, 2);
       
-      //Bottom Border Menu.
+      //Top & Bottom Border Menu.
+      topGrid.add(alert, 0, 0);
       bottomGrid.add(restartButton, 0, 0);
       bottomGrid.add(endButton, 1, 0);
       
@@ -107,24 +110,24 @@ public class GameBoard
       leftHbox.setPrefSize(150,50);
       rightHbox.setPrefSize(150,50);
       
-      //Set Alignment.
+      //Set Postioning.
+      centerGrid.setHgap(5);
+      centerGrid.setVgap(5);
+      bottomGrid.setHgap(10);
       centerGrid.setAlignment(Pos.CENTER);
-      gameBorder.setAlignment(alert, Pos.CENTER);
+      topGrid.setAlignment(Pos.CENTER);
       
       //Add CSS.
-      bottomGrid.getStyleClass().addAll("pane");
       scene2.getStylesheets().add("css/style.css");
+      topGrid.getStyleClass().addAll("pane");
+      bottomGrid.getStyleClass().addAll("pane");
       gameBorder.getStyleClass().addAll("centerAlign");
-      alert.getStyleClass().addAll("centerAlign");
       
       //Add the scene2 to the secondaryStage.
       secondaryStage.setScene(scene2);
       
       //Set secondaryStage title.
       secondaryStage.setTitle("Tic Tac Toe");
-      
-      //Debugging
-      bottomGrid.setGridLinesVisible(true);
       
       //Show the window.
       secondaryStage.show();
@@ -300,3 +303,19 @@ public class GameBoard
       this.alert.setText("Winner Found!!!");
    }
 }//End of Class.
+
+/*
+   //TESTING DATA//
+   
+   *selecting buttons 1 through 9:
+      -set button text to either X or O.
+   
+   *Selecting restart button:
+      -restart game and buttons 1 - 9.
+   
+   *Selecting end button:
+      -close secondary stage/close program.
+   
+   *Matching X's or O's vertically/horizontally/diagonally:
+      -text changes to "winner found". 
+*/
