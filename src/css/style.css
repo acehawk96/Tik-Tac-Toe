@@ -1,5 +1,6 @@
 /*
-
+    Style Sheet used for customizing Tick Tack Toe Java Game using JavaFX GUI.
+    10 Dec 2020
 */
 
 .root
@@ -8,14 +9,14 @@
     -fx-font-size: 30px;
     -fx-font-family: "Arial";
 }
-
+/*  Game Window */
 .pane
 {
     -fx-background-color: #f4acb7;
     -fx-border-color: #ffe5d9;
     -fx-border-width: 20px;
 }
-
+/*  Button tiles */
 .gameButton
 {
     -fx-text-fill: #9d8189;
@@ -27,16 +28,14 @@
     -fx-font-size: 60px;
     -fx-padding: 6;
 }
-
-}
-
+/*  Grid for Button tiles   */
 .centerGrid 
 {
     -fx-background-color: #9d8189;
     -fx-background-insets: 1, 1, 1, 1, 1 ;
     -fx-padding: 10px;
 }
-
+/*  All other non-formatted Buttons   */
 Button
 {
     -fx-padding: 10;
@@ -47,13 +46,14 @@ Button
     -fx-background-radius: 10px;
     -fx-border-radius: 10;
 }
-
+/*  Text object    */
 Text
 {
     -fx-text-alignment: center;
     -fx-padding: 10;
+    -fx-text-fill: #9d8189;
 }
-
+/*  Used to center items    */
 .centerAlign 
 {
     -fx-alignment: center;
