@@ -16,6 +16,6 @@ Lessons Learned:
 
     -Searching for reference/similar programs make the planning process more efficient timewise.
  
-    -Loops = less repeative code for repeatative tasks. 
+    -Loops = less repetitive code for repetitive tasks. 
  
     -Next time, I would like to work out my design plan/color scheme on a program like Adobe XD or photoshop. 
