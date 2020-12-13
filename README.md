@@ -4,13 +4,13 @@
  Start Program by running Java file: Main.java
  
  //Start menu
- ![Tick Tack Toe Game starting screen](src/images/screenShots/firstPG.PNG)
+ ![Tic Tac Toe Game starting screen](src/images/screenShots/firstPG.PNG)
  
  //Game menu
- ![Tick Tack Toe Game starting screen](src/images/screenShots/secondPG.PNG)
+ ![Tic Tac Toe Game starting screen](src/images/screenShots/secondPG.PNG)
  
 //Winner found menu
-![Tick Tack Toe Game starting screen](src/images/screenShots/thirdPG.PNG)
+![Tic Tac Toe Game starting screen](src/images/screenShots/thirdPG.PNG)
 
 Lessons Learned:
 
