@@ -1,6 +1,5 @@
 # Tic Tac Toe
  Tic Tac Toe Game using JavaFX with CSS styling.
- 
  ---------------------------------------------------------
  
  Directions: Start Program by running Java file: Main.java
