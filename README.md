@@ -12,7 +12,7 @@ Directions: Start Program by running Java file: Main.java
  ### Game menu
  ![Tic Tac Toe Game screen](src/images/screenShots/secondPG.PNG)
  
- ### Winner found menu
+ ### Winner menu
  ![Tic Tac Toe Game winner screen](src/images/screenShots/thirdPG.PNG)
 
  -----------------------------------------------------------------------------------------------
